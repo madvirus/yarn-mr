@@ -1,0 +1,61 @@
+<?xml version="1.0"?>
+
+<configuration>
+    <!-- mapred-site.xml -->
+    <property>
+        <name>mapreduce.map.memory.mb</name>
+        <value>258</value>
+    </property>
+    <property>
+        <name>mapreduce.reduce.memory.mb</name>
+        <value>256</value>
+    </property>
+    <property>
+        <name>yarn.app.mapreduce.am.resource.mb</name>
+        <value>512</value>
+    </property>
+    <property>
+        <name>mapreduce.jobhistory.address</name>
+        <value>bt4:10020</value>
+    </property>
+    <property>
+        <name>mapreduce.jobhistory.intermediate-done-dir</name>
+        <value>/mr-history/tmp</value>
+    </property>
+    <property>
+        <name>mapreduce.jobhistory.done-dir</name>
+        <value>/mr-history/done</value>
+    </property>
+
+    <!-- yarn-site.xml -->
+    <property>
+        <name>yarn.resourcemanager.address</name>
+        <value>bt4:8050</value>
+    </property>
+    <property>
+        <name>yarn.resourcemanager.scheduler.address</name>
+        <value>bt4:8030</value>
+    </property>
+    <property>
+        <name>mapreduce.framework.name</name>
+        <value>yarn</value>
+    </property>
+    <property>
+        <name>yarn.nodemanager.remote-app-log-dir</name>
+        <value>/app-logs</value>
+    </property>
+    <property>
+        <name>yarn.log-aggregation-enable</name>
+        <value>true</value>
+    </property>
+    <property>
+        <name>yarn.application.classpath</name>
+        <value>/etc/hadoop/conf,/usr/lib/hadoop/*,/usr/lib/hadoop/lib/*,/usr/lib/hadoop-hdfs/*,/usr/lib/hadoop-hdfs/lib/*,/usr/lib/hadoop-yarn/*,/usr/lib/hadoop-yarn/lib/*,/usr/lib/hadoop-mapreduce/*,/usr/lib/hadoop-mapreduce/lib/*</value>
+    </property>
+
+    <!-- core-site.xml -->
+    <property>
+        <name>fs.defaultFS</name>
+        <value>hdfs://bt4:8020</value>
+    </property>
+</configuration>

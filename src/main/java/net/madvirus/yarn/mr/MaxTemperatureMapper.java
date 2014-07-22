@@ -10,18 +10,13 @@ import java.io.IOException;
 
 public class MaxTemperatureMapper extends Mapper<LongWritable, Text, Text, IntWritable> {
 
+    private NcdcRecordParser parser = new NcdcRecordParser();
+
     @Override
     protected void map(LongWritable key, Text value, Context context) throws IOException, InterruptedException {
-        String line = value.toString();
-        String year = line.substring(15, 19);
-        String temp = line.substring(87, 92);
-        if (!missing(temp)) {
-            int airTemperatur = Integer.parseInt(line.substring(87, 92));
-            context.write(new Text(year), new IntWritable(airTemperatur));
-        }
+        parser.parse(value);
+        if (parser.isValidTemperature())
+            context.write(new Text(parser.getYear()), new IntWritable(parser.getAirTemperature()));
     }
 
-    private boolean missing(String temp) {
-        return temp.equals("+9999");
-    }
 }

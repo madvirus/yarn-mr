@@ -11,6 +11,7 @@ import org.apache.hadoop.util.Tool;
 import org.apache.hadoop.util.ToolRunner;
 
 public class MaxTemperatureDriver extends Configured implements Tool {
+
     public static void main(String[] args) throws Exception {
         int exitCode = ToolRunner.run(new MaxTemperatureDriver(), args);
         System.exit(exitCode);
