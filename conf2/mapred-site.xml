@@ -1,0 +1,29 @@
+<?xml version="1.0"?>
+
+<configuration>
+    <!-- mapred-site.xml -->
+    <property>
+        <name>mapreduce.map.memory.mb</name>
+        <value>258</value>
+    </property>
+    <property>
+        <name>mapreduce.reduce.memory.mb</name>
+        <value>256</value>
+    </property>
+    <property>
+        <name>yarn.app.mapreduce.am.resource.mb</name>
+        <value>512</value>
+    </property>
+    <property>
+        <name>mapreduce.jobhistory.address</name>
+        <value>bt4:10020</value>
+    </property>
+    <property>
+        <name>mapreduce.jobhistory.intermediate-done-dir</name>
+        <value>/mr-history/tmp</value>
+    </property>
+    <property>
+        <name>mapreduce.jobhistory.done-dir</name>
+        <value>/mr-history/done</value>
+    </property>
+</configuration>

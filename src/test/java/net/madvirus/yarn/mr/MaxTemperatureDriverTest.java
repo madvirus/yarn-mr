@@ -20,7 +20,8 @@ public class MaxTemperatureDriverTest {
     @Test
     public void test() throws Exception {
         Configuration conf = new Configuration();
-        conf.set("df.defaultFS", "file:///");
+//        conf.set("fs.defaultFS", "file:///");
+//        conf.set("mapreduce.framework.name", "local");
 
         Path input = new Path("input/ncdc");
         Path output = new Path("output");
